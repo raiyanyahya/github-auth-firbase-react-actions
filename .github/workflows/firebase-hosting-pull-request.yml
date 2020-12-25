@@ -13,5 +13,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BUILDPIPE_TEST }}'
           projectId: buildpipe-test
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
+          channelId: live
