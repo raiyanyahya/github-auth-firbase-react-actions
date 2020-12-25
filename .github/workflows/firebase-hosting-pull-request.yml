@@ -7,9 +7,11 @@ jobs:
       - uses: actions/checkout@v2
       - run: echo "REACT_APP_FIREBASE_API_KEY='${{ secrets.FIREBASE_API_KEY }}'" >> .env
       - run: echo "REACT_APP_FIREBASE_DOMAIN_URL='${{ secrets.FIREBASE_AUTH_DOMAIN }}'" >> .env
-      - run:  npm build
+      - run:  npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BUILDPIPE_TEST }}'
           projectId: buildpipe-test
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
