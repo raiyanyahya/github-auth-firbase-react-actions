@@ -6,7 +6,7 @@
     "clear-build-cache": "rm -rf .cache/ dist/",
     "dev": "parcel index.html",
     "prebuild": "rm -rf dist",
-    "build": "cross-env NODE_ENV=production parcel build ./index.html --public-url ./",
+    "build": "parcel build --no-source-maps ./index.html --public-url ./",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
