@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import firebase from "firebase/app";
+import "firebase/auth";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+require("dotenv").config();
 
-const Firebase = () => {
+firebase.initializeApp({
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN_URL,
+});
+const FirebaseSignIn = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
   const uiConfig = {
@@ -42,4 +48,4 @@ const Firebase = () => {
   );
 };
 
-export default Firebase;
+export default FirebaseSignIn;
